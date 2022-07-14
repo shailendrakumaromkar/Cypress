@@ -31,6 +31,9 @@ customise with any attribute > tagname[attribute=value]
 
 parent child > parenttagname give space childtagname e.g. form input
 
+.product:visible > show only visible element in UI
+
+
 
 
 
