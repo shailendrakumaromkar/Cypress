@@ -11,3 +11,30 @@ node_modules/.bin/cypress run
 node_modules/.bin/cypress run --headed
 
 node_modules/.bin/cypress run --browser chrome
+
+
+node_modules/.bin/cypress run --headed --browser chrome
+
+
+
+fixtures > test data
+integration > examples > test case or directly under integration
+plugins > listenere, brower on full screen mode, customise option to browser e.g. accept certificates, on test failure trigger particular event
+support > customise or reusable methods, 
+cypress.config.js >  open test runner 1st time : config file for entire framework, how cypress test should behave, e2e is the object
+
+
+css selector : 
+id > #idname or tagname#idname
+classname > .classname  or tagname.classname
+customise with any attribute > tagname[attribute=value]
+
+parent child > parenttagname give space childtagname e.g. form input
+
+
+
+
+
+
+
+
