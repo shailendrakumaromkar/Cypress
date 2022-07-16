@@ -35,6 +35,9 @@ parent child > parenttagname give space childtagname e.g. form input
 
 
 
+parent child chaining > get().find()
+
+
 
 
 
