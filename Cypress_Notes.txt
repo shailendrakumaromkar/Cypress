@@ -1,5 +1,8 @@
 Cypress_Notes
 
+for connector automation
+while searching for salesforce connector > use dynamic dropdown
+
 spec > test case  is called spec file
 before, after screenshot
 
@@ -38,6 +41,8 @@ parent child > parenttagname give space childtagname e.g. form input
 parent child chaining > get().find()
 
 
+
+static dropdown tagname will be select
 
 
 
