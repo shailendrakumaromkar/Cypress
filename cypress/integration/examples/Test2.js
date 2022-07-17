@@ -26,9 +26,17 @@ describe("Demo Test Suite", function(){
         })
 
             cy.get('#autocomplete').should('have.value', 'India')
-            
-  
 
-        }  )
+            cy.get('#displayed-text').should('be.visible')
+            cy.get('#hide-textbox').click()
+            cy.get('#displayed-text').should('not.be.visible')
+            cy.get('#show-textbox').click()
+            cy.get('#displayed-text').should('be.visible')
+
+
+            cy.get('[value="radio2"]').check().should('be.checked')
+
+
+    })
 
 })
