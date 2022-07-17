@@ -3,6 +3,8 @@ Cypress_Notes
 for connector automation
 while searching for salesforce connector > use dynamic dropdown
 
+https://rahulshettyacademy.com/AutomationPractice/
+
 spec > test case  is called spec file
 before, after screenshot
 
