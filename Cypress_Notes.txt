@@ -5,6 +5,9 @@ while searching for salesforce connector > use dynamic dropdown
 
 https://rahulshettyacademy.com/AutomationPractice/
 
+https://www.udemy.com/course/cypress-tutorial/learn/lecture/15705208#questions/9124902 > handson pending
+
+
 spec > test case  is called spec file
 before, after screenshot
 
