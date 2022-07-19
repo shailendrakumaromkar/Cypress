@@ -3,7 +3,7 @@
 describe("Demo Test Suite", function(){
     before(() => {
         // root-level hook
-        // runs once before all tests
+        // runs once before all
         cy.fixture('example').then(function(data){
             this.data=data
         })
