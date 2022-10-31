@@ -1,5 +1,414 @@
 Cypress_Notes
+auto wait for command & assertion before moving to next step - disable state, or animation loading or visible
+in selenium use explicit wait
+check state of web element
+force attribute on top over layer object, like in background ui element and its overlayed
+mocking server response : automate network request, API test, edge cases
+takes snapshot when test run
+fast, reliable, consistent test execution
+videos : dashboard
 
+selenium run outside browser and  : code wrapped as json file and invoke chrome driver this driver interprest all selenium code
+adnd pass command to brower
+no browser direct interaction
+
+cypress : directly operate with brwoer no proxy server in between, browser itself is executing script
+modify browser behaviour, manipulate DOM, 
+alter request n response on fly : mock response
+
+browser responsbility for test execution
+
+electron : not have all plugin, lgiht weighedt chrome browser, much fatser than other browser
+
+Component : Test Runner, Dashboard service
+
+any test case in javascript > spec file or test file
+
+***cypress.config.js > specPattern : path where spec are present
+specPattern: 'cypress/integration/examples'
+
+testng & moacha, jasmine are same in java n javascript
+
+cy.visit('') > visit url
+
+headless mode : default in cmd line
+default browser : electron
+
+cypress run --headed --browser chrome
+
+fixtues : store all test data
+integration : test case
+plugins : listneres, set brwoser on full screen, custom otpin to accept certificates, on browser invoke, on test failure
+
+support : custom command or reusbale method,utility
+
+cypress.config.js : global level properties
+
+When determining an unique selector it will automatically prefer elements with:
+
+data-cy
+data-test
+data-testid
+
+css selector 
+id : #idbname, tagname#idname
+classs : .classname, id space replace with dot
+
+tagname.classname
+
+cy.get.find.should('have.length',4)
+
+cy.get.find.eq(2).should('have.length',3)
+
+cy.get.find.contains('').click
+
+cy.get.find.each($e1,index,list)=>{
+}
+
+cy.get.find.each($e1,index,list)=>{
+$e1.find.text
+if text.includes('')
+$e1.find('button').click()
+}
+
+cy.get.find.each($e1,index,list)=>{
+$e1.find
+
+if text.includes()
+}
+
+
+customise > tagname[attribute=value], input[type='search']
+
+parent child tag > form input
+
+reference type=""cypress > auto suggestion
+
+type > enter in edit box
+
+
+get is driver.findelement
+get in selenum : hit url
+get in cypress : get anyy webelemnt
+
+
+should('have.lenght', 4)
+
+cy.wait(2000)
+
+
+invisible elemnt : retrieve only visible product in jquery use :visible > cy.get('.product:visible')
+
+
+find : descendant dom ele of speific sleector, i.e child element, scope of search refined under particular web element
+
+get.find : refine search, parent child chaining
+
+
+eq : eq(index)
+
+contains : text
+
+click()
+
+get > find > contains
+
+
+array iteration > each
+
+get once find multiple times
+
+include > subtext in javascript
+
+cy.wrap > can resolve promise > on find using .click() not allowed
+
+
+cypress is async in nature, but cypress takes care execution seqeunce
+
+cypress wrapper > handle step execute in sequence, syncronous
+queue all command, execute in order
+
+promse : state or behaviour of step > executed, pending, reject
+resolved > step exeucted
+reject > error in step
+pending > yet to execute
+
+using then > promise to resolved
+
+for non cypress > maunually handle promise ie resolve promise
+
+text > not cypress command, its jquery method
+
+alasing > as
+
+***checkbox
+checkbox > check
+
+in assertion with should
+validating proerty, comparison > have
+vdaliting behaviour > be.checked
+
+multiple should > use and
+concat assertion use and
+
+
+proerty value > should(have.value, valuename)
+
+
+should(not.be.checked)
+
+check(['specific option#'])
+
+
+check(['option1','option2'])
+
+
+*** dropdown
+static
+tagname will be select for static dropdown
+
+select() > option name or value attribute
+
+
+dynamic dropdown
+parent to child travel > gicve space in between
+type some text
+grab common element
+use each loop
+text()
+
+
+visible, invisible element
+
+vsible, checked  are behaviour > should(be.visible)
+
+radio button : check or click can use both
+
+
+pop up
+cypress auto accept alert and pop up
+cypress listen browser event for alert
+alert text
+
+window:alert
+
+cy.on > trigger event
+cy.on('window:alert', )
+
+
+compare 2 string
+expect("").to.equal("")
+
+confirm alert
+window:confirm
+
+
+
+child window/tab
+targt attribute
+
+target=_blank
+open in same tab
+
+delete target attribute to open in same window
+
+
+invoke command > invoke a function, jquery
+
+remove in jquery > removeattr
+
+invoke('removeAttr', 'target')
+
+browser navogtaion back
+
+cy.go
+
+cy.go('back')
+cy.go('forward')
+
+get url
+cy.url
+
+should('include','url text')
+
+
+webtable
+
+parent child > tr td:nth-child(2)
+
+immediate sibling
+use eq(index)
+.next
+
+
+
+mouse hoverc : no direct support in cypress, use jqury
+
+
+show in jqurrey > display hidden n selected element
+
+
+click in hidden element  > .click(force:true)
+
+
+frames, child windows
+child window : 
+1) get href attribute, get url, use cy.visit(href)
+2) remove taregt attribute
+
+how to get attribute value : jquery to get attrbute value, prop()
+
+prop() > get property value
+
+prop('href')
+
+visit: not accept any change in parent domain
+
+
+frames
+switch to frames
+at project level > npm install -D cypress-iframe
+
+///reference types="cypress-iframe"
+import 'cypress-iframe'
+
+cy.frameLoaded('#frameid')
+
+cy.iframe()	> swiitch to iframe mode
+
+cy.iframe.find().eq(0).click
+
+
+************
+framework
+
+hooks
+data driven > fixtures
+custom sypress command
+parameterize test
+POM
+cypress.json
+screens hot video,
+dashboard
+env variable
+report
+jenkins
+
+
+hooks
+before :  before all test
+	before each : before each test
+		it
+	afterEach
+after
+
+
+fixtures > data driven
+
+cy.fixture().then(fucntion(data){
+
+}) > this.data =data
+
+this.data.name
+
+	
+should(have.vlaue, value)
+should(have.attr, minlength,2) or use prop()
+
+should(be.disabled)
+
+
+cusotm method > support > commands.js
+
+parameterize : create array in fixture file use this.data.arrayname in test
+
+
+iterate array in javascript : forEach
+
+
+debug : pause test and resume after providing input
+
+cy.pause()
+
+
+cy.debug()
+
+
+dashboard
+
+project id in cypresss.json
+
+--record -key > cypress dashboard, recording
+
+
+failed test retry
+
+
+Mocha does not support => fat arrow fucntion
+give function keyword
+
+
+
+does not support super domain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************************************
+Before 19 Aug 2022
 for connector automation
 while searching for salesforce connector > use dynamic dropdown
 
